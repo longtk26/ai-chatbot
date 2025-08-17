@@ -1,0 +1,24 @@
+1
+00:00:01,000 --> 00:00:04,000
+Hello, and welcome to our sample movie.
+
+2
+00:00:05,000 --> 00:00:10,000
+This is a demonstration of the SRT subtitle format,
+which is widely used for video subtitling.
+
+3
+00:00:13,000 --> 00:00:18,000
+SRT files contain numbered subtitle sequences
+with start and end timestamps.
+
+4
+00:00:19,000 --> 00:00:26,000
+Each subtitle can span multiple lines
+and includes timing information.
+
+5
+00:00:27,000 --> 00:00:33,000
+The format is: sequence number,
+followed by the time range,
+followed by the subtitle text.
