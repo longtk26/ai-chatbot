@@ -73,6 +73,10 @@
     uv install -r requirements.txt
     source .venv/bin/activate
     ```
+- Run `embedded.py` to import embeddings into the vector database:
+    ```bash
+    uv run src/embedded.py
+    ```
 
 - Run the Jupyter lab to explore the implementations:
     ```bash
@@ -80,18 +84,37 @@
     # Or using vscode jupyter extension
     ```
 
-
-
-
-
-
 ## Methodologies extend model capabilities
 
 ### Tool with function-calling
 
 **What is tool with function-calling?**
 
+When making a request to generate response, we can enable the function-calling feature of OpenAI models to allow the model to decide whether to call a function (tool) and which tool to call. This allows the model to interact with external systems or APIs to fetch real-time data or perform specific actions.
+
 **Structure configuration with OpenAI**
+```ts
+
+tools = [
+    {
+        "type": "function",
+        "name": "get_weather",
+        "description": "Get current temperature for a given location.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "location": {
+                    "type": "string",
+                    "description": "City and country e.g. Bogotá, Colombia",
+                }
+            },
+            "required": ["location"],
+            "additionalProperties": False,
+        },
+        "strict": True,
+    },
+]
+```
 
 **Example implementation**
 - Please refer to the [notebook](src/chat-bot.ipynb) for detailed implementation.
@@ -100,7 +123,18 @@
 ### Model context protocol (MCP)
 **What is MCP?**
 
+MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
+
+Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect electronic devices, MCP provides a standardized way to connect AI applications to external systems.
+
+
+![MCP Overview](docs/imgs/mcp-overview.png)
+
 **Architecture overview**
+
+- Detail about MCP architecture can be found at the [official MCP documentation](https://modelcontextprotocol.io/docs/learn/architecture).
+- Architecture is used in this implementation is as follows:
+![MCP Architecture](docs/imgs/mcp-architecture.png)
 
 **Example implementation**
 - Please refer to the [notebook](src/chat-bot.ipynb) for detailed implementation.
@@ -108,7 +142,10 @@
 ### Retrieval-augmented generation (RAG)
 **What is RAG?**
 
+Retrieval-Augmented Generation (RAG) is an advanced AI framework that combines information retrieval with text generation models like GPT to produce more accurate and up-to-date responses. Instead of relying only on pre-trained data like traditional language models, RAG fetches relevant documents from an external knowledge source before generating an answer.
+
 **Architecture overview**
+![RAG architecture](docs/imgs/rag-architecture.png)
 
 **Example implementation**
 - Please refer to the [notebook](src/chat-bot.ipynb) for detailed implementation.
