@@ -123,10 +123,11 @@ tools = [
 ### Model context protocol (MCP)
 **What is MCP?**
 
-MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
+> MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
 
-Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect electronic devices, MCP provides a standardized way to connect AI applications to external systems.
+> Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect electronic devices, MCP provides a standardized way to connect AI applications to external systems.
 
+*Source: [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)*
 
 ![MCP Overview](docs/imgs/mcp-overview.png)
 
@@ -142,7 +143,9 @@ Think of MCP like a USB-C port for AI applications. Just as USB-C provides a sta
 ### Retrieval-augmented generation (RAG)
 **What is RAG?**
 
-Retrieval-Augmented Generation (RAG) is an advanced AI framework that combines information retrieval with text generation models like GPT to produce more accurate and up-to-date responses. Instead of relying only on pre-trained data like traditional language models, RAG fetches relevant documents from an external knowledge source before generating an answer.
+> Retrieval-Augmented Generation (RAG) is an advanced AI framework that combines information retrieval with text generation models like GPT to produce more accurate and up-to-date responses. Instead of relying only on pre-trained data like traditional language models, RAG fetches relevant documents from an external knowledge source before generating an answer.
+
+*Source: [What is Retrieval-Augmented Generation?](https://www.geeksforgeeks.org/nlp/what-is-retrieval-augmented-generation-rag/)*
 
 **Architecture overview**
 ![RAG architecture](docs/imgs/rag-architecture.png)
